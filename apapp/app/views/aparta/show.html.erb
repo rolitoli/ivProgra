@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @apartum.titulo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @apartum.descripcion %>
+</p>
+
+<p>
+  <strong>Ubicacion:</strong>
+  <%= @apartum.ubicacion %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @apartum.costo %>
+</p>
+
+<p>
+  <strong>Contacto:</strong>
+  <%= @apartum.contacto %>
+</p>
+
+<%= link_to 'Editar', edit_apartum_path(@apartum) %> |
+<%= link_to 'Regresar', aparta_path %>

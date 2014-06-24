@@ -1,0 +1,37 @@
+<%= form_for(@apartum) do |f| %>
+  <% if @apartum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apartum.errors.count, "error") %> prohibited this apartum from being saved:</h2>
+
+      <ul>
+      <% @apartum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :ubicacion %><br>
+    <%= f.text_field :ubicacion %>
+  </div>
+  <div class="field">
+    <%= f.label :costo %><br>
+    <%= f.number_field :costo %>
+  </div>
+  <div class="field">
+    <%= f.label :contacto %><br>
+    <%= f.text_field :contacto %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

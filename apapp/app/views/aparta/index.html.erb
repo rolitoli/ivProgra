@@ -1,0 +1,33 @@
+<h1>Apartamentos Disponibles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Ubicacion</th>
+      <th>Costo</th>
+      <th>Contacto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aparta.each do |apartum| %>
+      <tr>
+        <td><%= apartum.titulo %></td>
+        <td><%= apartum.descripcion %></td>
+        <td><%= apartum.ubicacion %></td>
+        <td><%= apartum.costo %></td>
+        <td><%= apartum.contacto %></td>
+        <td><%= link_to 'Mostrar', apartum %></td>
+        <td><%= link_to 'Editar', edit_apartum_path(apartum) %></td>
+        <td><%= link_to 'Eliminar', apartum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Publicar un nuveo apartamento', new_apartum_path %>
